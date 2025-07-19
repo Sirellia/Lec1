@@ -30,8 +30,7 @@ public class BankAccount {
 
     public boolean transfer(BankAccount otherAccount, int amount) {
         if (isBlocked || otherAccount.isBlocked || amount <= 0 || amount > balance) {
-            return false;  // проверка всех условий для перевода
-        }
+            return false; 
 
         if (this.withdraw(amount)) {
             return otherAccount.deposit(amount);
